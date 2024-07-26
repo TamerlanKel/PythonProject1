@@ -43,11 +43,6 @@ def generate_password(n):
 while True:
     try:
         user_input = int(input("Введите число от 3 до 20: "))
-        if user_input == "exit":
-            print("Завершение работы")
-            break
-        else:
-            print("Работа продолжается")
         n = user_input
         if 2 < n < 21:
             result = generate_password(n)
