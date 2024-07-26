@@ -39,14 +39,23 @@ def generate_password(n):
                     used_numbers.add(i)
                     used_numbers.add(j)
 
-
     return result
-n = int(input("Введите число от 3 до 20: "))
-if 3 < n < 20:
-    result = generate_password(n)
-    print("Число:", {n}, "Пароль:4", {result})
-else:
-    print("Введите число от 3 до 20")
+while True:
+    try:
+        user_input = int(input("Введите число от 3 до 20: "))
+        if user_input == "exit":
+            print("Завершение работы")
+            break
+        else:
+            print("Работа продолжается")
+        n = user_input
+        if 2 < n < 21:
+            result = generate_password(n)
+            print("Число:", {n}, "Пароль", {result})
+        else:
+            print("Введите число от 3 до 20")
+    except ValueError:
+        print(":(")
 
 
 
