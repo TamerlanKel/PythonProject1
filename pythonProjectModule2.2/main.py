@@ -17,7 +17,7 @@
 first = int(input("Введите ваше 1 число: "))
 second = int(input("Введите ваше 2 число: "))
 third = int(input("Введите ваше 3 число: "))
-if first and second == third:
+if first == second == third:
     print(3)
 elif first == second or first == third or second == third:
     print(2)
