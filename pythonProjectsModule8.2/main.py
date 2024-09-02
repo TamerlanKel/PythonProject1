@@ -40,6 +40,7 @@
 # print(f'Результат 3: {calculate_average(567)}') # Передана не коллекция
 # print(f'Результат 4: {calculate_average([42, 15, 36, 13])}') # Всё должно работать
 
+
 def personal_sum(numbers):
     result = 0
     incorrect_data = 0
@@ -56,15 +57,17 @@ def personal_sum(numbers):
 
 def calculate_average(numbers):
     try:
+        total_sum, incorrect_count = personal_sum(numbers)
+        count_valid_numbers = len(numbers) - incorrect_count
+        if count_valid_numbers == 0:
+            return 0
+        average = total_sum / count_valid_numbers
+    except ZeroDivisionError:
+        return 0
+    except TypeError:
         if not isinstance(numbers, (list, tuple)):
             print('В numbers записан некорректный тип данных')
             return None
-
-        total_sum, incorrect_count = personal_sum(numbers)
-        average = total_sum / (len(numbers) - incorrect_count)
-    except ZeroDivisionError:
-        return 0
-
     return average
 
 
