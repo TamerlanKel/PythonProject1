@@ -33,12 +33,8 @@ class RunnerTest(TestCase):
         runner2 = Runner('Dima')
         for i in range(10):
             runner1.run()
-            runner1.walk()
-        for j in range(10):
-            runner2.run()
             runner2.walk()
-        self.assertNotEqual(runner1.distance, 120)
-        self.assertNotEqual(runner2.distance, 120)
+        self.assertNotEqual(runner1.distance, runner2.distance)
 
 
 if __name__ == "__main__":
