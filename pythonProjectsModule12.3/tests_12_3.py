@@ -1,7 +1,6 @@
 import unittest
 
 def skip_if_frozen(test_func):
-    # Декоратор для пропуска теста, если is_frozen = True
     def wrapper(self, *args, **kwargs):
         if self.is_frozen:
             raise unittest.SkipTest("Тесты в этом кейсе заморожены")
@@ -9,7 +8,7 @@ def skip_if_frozen(test_func):
     return wrapper
 
 class RunnerTest(unittest.TestCase):
-    is_frozen = False  # Указываем, что тесты не заморожены
+    is_frozen = False
 
     def test_challenge(self):
         self.assertEqual(1 + 1, 2)
@@ -22,7 +21,7 @@ class RunnerTest(unittest.TestCase):
 
 
 class TournamentTest(unittest.TestCase):
-    is_frozen = True  # Указываем, что тесты заморожены
+    is_frozen = True
 
     @skip_if_frozen
     def test_first_tournament(self):
