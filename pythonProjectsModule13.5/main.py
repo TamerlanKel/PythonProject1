@@ -8,7 +8,7 @@ import asyncio
 api = ""
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage= MemoryStorage())
-kb = ReplyKeyboardMarkup()
+kb = ReplyKeyboardMarkup(resize_keyboard=True)
 button1 = KeyboardButton(text = 'Рассчитать')
 button2 = KeyboardButton(text = 'Информация')
 kb.row(button1, button2)
@@ -24,6 +24,7 @@ class UserState(StatesGroup):
 
 @dp.message_handler(commands=['start'])
 async def start(message):
+    reply_markup = kb
     print('Привет! Я бот помогающий твоему здоровью.')
     await message.answer('Привет! Я бот помогающий твоему здоровью.', reply_markup = kb)
 
