@@ -6,7 +6,7 @@ import asyncio
 from texts import *
 from keyboards import *
 
-api = "7995073436:AAEF_jfHQ6YyKRmv8mIEw79qZrGjjhU0rXs"
+api = ""
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
