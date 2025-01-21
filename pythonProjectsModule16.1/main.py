@@ -12,10 +12,10 @@ async def root():
     return {"Вы вошли как администратор}"}
 
 @app.get("/user/{user_id}")
-async def root(user_id: int):
+async def root(user_id: str):
     return {f"Вы вошли как пользователь № {user_id}"}
 
 
 @app.get("/user")
-async def root(username: str, age: int):
+async def root(username: str, age: str):
     return {f"Информация о пользователе. Имя: {username}, Возраст: {age}"}
